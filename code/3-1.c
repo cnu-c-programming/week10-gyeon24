@@ -2,17 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-// 노드 구조체 정의
 struct Node {
     char name[50];
     int score;
     struct Node* next;
 };
 
-// 리스트의 시작(head)
 struct Node* head = NULL;
 
-// add <name> <score>: 리스트의 맨 뒤에 추가
 void add(char* name, int score) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     strcpy(newNode->name, name);
@@ -22,52 +19,49 @@ void add(char* name, int score) {
     if (head == NULL) {
         head = newNode;
     } else {
-        struct Node* temp = head;
-        while (temp->next != NULL) {
-            temp = temp->next;
+        struct Node* tmp = head;
+        while (tmp->next != NULL) {
+            tmp = tmp->next;
         }
-        temp->next = newNode;
+        tmp->next = newNode;
     }
 }
 
-// delete <name>: 해당 이름을 가진 학생 제거
 void delete_node(char* name) {
-    struct Node* temp = head;
+    struct Node* tmp = head;
     struct Node* prev = NULL;
 
-    if (temp != NULL && strcmp(temp->name, name) == 0) {
-        head = temp->next;
-        free(temp);
+    if (tmp != NULL && strcmp(tmp->name, name) == 0) {
+        head = tmp->next;
+        free(tmp);
         return;
     }
 
-    while (temp != NULL && strcmp(temp->name, name) != 0) {
-        prev = temp;
-        temp = temp->next;
+    while (tmp != NULL && strcmp(tmp->name, name) != 0) {
+        prev = tmp;
+        tmp = tmp->next;
     }
 
-    if (temp == NULL) return; [span_27](start_span)// 예외 처리는 생략[span_27](end_span)
+    if (tmp == NULL) return;
 
     prev->next = temp->next;
-    free(temp);
+    free(tmp);
 }
 
-// print: 리스트 전체 출력
 void print_list() {
-    struct Node* temp = head;
-    while (temp != NULL) {
-        printf("%s %d\n", temp->name, temp->score);
-        temp = temp->next;
+    struct Node* tmp = head;
+    while (tmp != NULL) {
+        printf("%s %d\n", tmp->name, tmp->score);
+        tmp = tmp->next;
     }
 }
 
-// quit: 할당된 모든 메모리 해제
 void free_all() {
-    struct Node* temp = head;
-    while (temp != NULL) {
-        struct Node* next = temp->next;
-        free(temp);
-        temp = next;
+    struct Node* tmp = head;
+    while (tmp != NULL) {
+        struct Node* next = tmp->next;
+        free(tmp);
+        tmp = next;
     }
     head = NULL;
 }
