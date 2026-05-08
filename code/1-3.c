@@ -10,21 +10,21 @@ struct IPv4 {
 };
 
 void update_val(struct IPv4 s) {
-    sprintf(s.data, "update_val"); [span_9](start_span)//[span_9](end_span)
+    sprintf(s.data, "update_val");
 }
 
 void update_ptr(struct IPv4* s) {
-    sprintf(s->data, "update_ptr"); [span_10](start_span)//[span_10](end_span)
+    sprintf(s->data, "update_ptr");
 }
 
 int main() {
-    struct IPv4 s1 = {0}, s2 = {0}; [span_11](start_span)//[span_11](end_span)
+    struct IPv4 s1 = {0}, s2 = {0};
     
     update_val(s1);
     update_ptr(&s2);
     
     printf("%s\n", s1.data);
-    printf("%s\n", s2.data); [span_12](start_span)//[span_12](end_span)
+    printf("%s\n", s2.data);
     
     return 0;
 }
