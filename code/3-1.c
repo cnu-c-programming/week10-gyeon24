@@ -44,7 +44,7 @@ void delete_node(char* name) {
 
     if (tmp == NULL) return;
 
-    prev->next = temp->next;
+    prev->next = tmp->next;
     free(tmp);
 }
 
