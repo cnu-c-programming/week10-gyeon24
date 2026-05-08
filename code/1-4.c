@@ -34,7 +34,7 @@ int main() {
         update_ptr(&s);
     }
     finish = clock();
-    printf("%f\n", (double)(finish - start) / CLOCKS_PER_SEC); [span_15](start_span)//[span_15](end_span)
+    printf("%f\n", (double)(finish - start) / CLOCKS_PER_SEC);
     
     return 0;
 }
