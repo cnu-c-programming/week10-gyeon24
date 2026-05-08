@@ -21,7 +21,7 @@ int main() {
     printf("ihl: %u, size: %zu\n", s.ihl, sizeof(s.ihl));
     printf("ttl: %llu, size: %zu\n", s.ttl, sizeof(s.ttl));
     printf("protocol: %llu, size: %zu\n", s.protocol, sizeof(s.protocol));
-    printf("data: %s, size: %zu\n", s.data, sizeof(s.data)); [span_7](start_span)//[span_7](end_span)
+    printf("data: %s, size: %zu\n", s.data, sizeof(s.data));
     
     return 0;
 }
