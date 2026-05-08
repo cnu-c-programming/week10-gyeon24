@@ -25,6 +25,4 @@ int main() {
     
     printf("%s\n", s1.data);
     printf("%s\n", s2.data);
-    
-    return 0;
 }
