@@ -10,7 +10,7 @@ struct S2 {
     char c;
     int i;
     long long l;
-} __attribute__((packed)); [span_3](start_span)
+} __attribute__((packed));
 
 int main() {
     struct S1 s1;
